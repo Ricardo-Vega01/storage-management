@@ -8,7 +8,7 @@ PostgreSQL.
 ## Clone the repository
 
 ```bash
-git clone git@github.com:Ricardo-Vega01/storage-managment.git
+git@github.com:Ricardo-Vega01/storage-management.git
 cd storage-managment
 ```
 
