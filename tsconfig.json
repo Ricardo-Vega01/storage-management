@@ -1,0 +1,78 @@
+/*{
+  "compilerOptions": {
+    // File Layout
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "baseUrl": "./",
+    // Environment Settings
+    "module": "nodenext",
+    "target": "es2022",
+    "types": ["node"],
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "strict": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+    "paths": {
+      "@Ports/*": ["src/App/Ports/*"],
+      "@UseCases/*": ["src/App/UseCases/*"],
+      "@Dtos/*": ["src/App/Dtos*"],
+      "@Entities/*": ["src/Domain/Entity/*"],
+      "@Config/*": ["src/Infrastructure/Config/*"],
+      "@Database/*": ["src/Infrastructure/Database/*"],
+      "@Server/*": ["src/Infrastructure/Server/*"],
+      "@Utils/*": ["src/Infrastructure/Utils/*"],
+      "@Http/*": ["src/Adapters/Http/*"],
+      "@Events/*": ["src/Adapters/Events/*"],
+      "@Cli/*": ["src/Adapters/Cli/*"],
+      "@Repos/*": ["src/Adapters/Repositories/*"],
+      "@Modules/*": ["src/Modules/*"],
+
+    }
+  },
+  "include": ["src/**/ /*"],
+  "exclude": ["dist"]
+}
+*/
+
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "useDefineForClassFields": false,
+    "verbatimModuleSyntax": false,
+    "isolatedModules": false,
+    "paths": {
+      "@Ports/*": ["src/App/Ports/*"],
+      "@UseCases/*": ["src/App/UseCases/*"],
+      "@Dtos/*": ["src/App/Dtos/*"],
+      "@Entities/*": ["src/Domain/Entity/*"],
+      "@Config/*": ["src/Infrastructure/Config/*"],
+      "@Database/*": ["src/Infrastructure/Database/*"],
+      "@Server/*": ["src/Infrastructure/Server/*"],
+      "@Utils/*": ["src/Infrastructure/Utils/*"],
+      "@Http/*": ["src/Adapters/Http/*"],
+      "@Events/*": ["src/Adapters/Events/*"],
+      "@Cli/*": ["src/Adapters/Cli/*"],
+      "@Repos/*": ["src/Adapters/Repositories/*"],
+      "@Modules/*": ["src/Modules/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["dist"]
+}
