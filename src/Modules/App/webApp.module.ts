@@ -1,4 +1,4 @@
-import { webController } from "@Http//web.controller.js";
+import { webController } from "@Http//web.controller";
 import { Module } from "@nestjs/common";
 
 @Module({

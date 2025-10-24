@@ -1,7 +1,7 @@
-import  { User } from "@Entities/Users/user.entity.js";
+import  { User } from "@Entities/Users/user.entity";
 import { Inject, Injectable } from "@nestjs/common";
-import type { GetUserPort } from "@Ports/In/Users/get-user.port.js";
-import type { UserRepository } from "@Ports/Out/user-repo.port.js";
+import type { GetUserPort } from "@Ports/In/Users/get-user.port";
+import type { UserRepository } from "@Ports/Out/user-repo.port";
 
 Injectable()
 export class FindUserCase implements GetUserPort {

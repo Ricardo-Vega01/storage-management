@@ -1,7 +1,7 @@
-import  { User } from "@Entities/Users/user.entity.js";
+import  { User } from "@Entities/Users/user.entity";
 import { Inject, Injectable } from "@nestjs/common";
-import type { DeleteUserPort } from "@Ports/In/Users/delete-user.port.js";
-import type { UserRepository } from "@Ports/Out/user-repo.port.js";
+import type { DeleteUserPort } from "@Ports/In/Users/delete-user.port";
+import type { UserRepository } from "@Ports/Out/user-repo.port";
 
 @Injectable()
 export class DeleteUserCase implements DeleteUserPort {

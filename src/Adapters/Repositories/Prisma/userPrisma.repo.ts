@@ -1,8 +1,8 @@
-import { PrismaService } from "@Database/prisma/prisma.service.js";
-import type { CreateUserDto } from "@Dtos//user.dtos.js";
-import { User } from "@Entities/Users/user.entity.js";
+import { PrismaService } from "@Database/prisma/prisma.service";
+import type { CreateUserDto } from "@Dtos//user.dtos";
+import { User } from "@Entities/Users/user.entity";
 import { Injectable } from "@nestjs/common";
-import type { UserRepository } from "@Ports/Out/user-repo.port.js";
+import type { UserRepository } from "@Ports/Out/user-repo.port";
 
 @Injectable()
 export class PrismaUserRepo implements UserRepository {
@@ -20,7 +20,7 @@ export class PrismaUserRepo implements UserRepository {
     return new User(created.id, created.name, created.email);
   }
 
-  async findById(id: string): Promise<User | null> {
+  async findById(id: string): Promise<any | null> {
     const found = await this.prisma.user.findUnique({ where: { id } });
     return found ? new User(found.id, found.name, found.email) : null;
   }
@@ -42,11 +42,16 @@ export class PrismaUserRepo implements UserRepository {
 
   async findAll(): Promise<User[]> {
     try {
-      console.log("Fetching users from the database...");
-      const users = await this.prisma.user.findMany();
-      console.log("Fetched users:", users);
+      console.log("¿prisma está definido?", !!this.prisma);
+      console.log("¿prisma.user está definido?", !!this.prisma?.user);
 
-      return users.map((u) => new User(u.id, u.name, u.email));
+      if (!this.prisma) {
+        throw new Error("PrismaService is not injected");
+      }
+
+      const users = await this.prisma.user.findMany();
+      console.log("✅ Users fetched:", users.length);
+      return users.map(u => new User(u.id, u.name, u.email));
     } catch (error) {
       console.error("Error fetching users:", error);
       throw new Error("Failed to fetch users");

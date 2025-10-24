@@ -1,7 +1,7 @@
 import type { INestApplication } from "@nestjs/common";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
-import { cors } from "./cors.config.js";
+import { cors } from "./cors.config";
 
 function ConfigureApp(app: INestApplication){
     // Config to protect request http

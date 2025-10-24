@@ -1,8 +1,8 @@
-import type { CreateUserDto } from "@Dtos//user.dtos.js";
-import { User } from "@Entities/Users/user.entity.js";
+import type { CreateUserDto } from "@Dtos//user.dtos";
+import { User } from "@Entities/Users/user.entity";
 import { Inject, Injectable } from "@nestjs/common";
-import type { CreateUserPort } from "@Ports/In/Users/create-user.port.js";
-import type { UserRepository } from "@Ports/Out/user-repo.port.js";
+import type { CreateUserPort } from "@Ports/In/Users/create-user.port";
+import type { UserRepository } from "@Ports/Out/user-repo.port";
 import { uuid } from "uuidv4";
 
 @Injectable()

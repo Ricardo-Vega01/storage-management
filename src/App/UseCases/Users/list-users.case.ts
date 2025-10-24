@@ -1,7 +1,7 @@
 import { Inject, Injectable } from "@nestjs/common";
-import { User } from "@Entities/Users/user.entity.js";
-import type { ListUsersPort } from "@Ports/In/Users/list-users.port.js";
-import type { UserRepository } from "@Ports/Out/user-repo.port.js";
+import { User } from "@Entities/Users/user.entity";
+import type { ListUsersPort } from "@Ports/In/Users/list-users.port";
+import type { UserRepository } from "@Ports/Out/user-repo.port";
 
 
 @Injectable()

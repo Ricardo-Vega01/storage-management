@@ -1,8 +1,8 @@
-import { DatabaseModule } from "@Database/database.module.js";
+import { DatabaseModule } from "@Database/database.module";
 import { ConfigModule } from "@nestjs/config";
-import { WebConfigModule } from "./webApp.module.js";
-import { UserModule } from "@Modules/Users/user.module.js";
-import { AppConfig } from "@Config/config.service.js";
+import { WebConfigModule } from "./webApp.module";
+import { UserModule } from "@Modules/Users/user.module";
+import { AppConfig } from "@Config/config.service";
 import { Module } from "@nestjs/common";
 
 

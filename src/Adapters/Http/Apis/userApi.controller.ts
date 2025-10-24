@@ -3,15 +3,16 @@ import {
   Controller,
   Delete,
   Get,
+  Inject,
   Param,
   Patch,
   Post,
 } from "@nestjs/common";
-import { CreateUserCase } from "@UseCases/Users/create-user.case.js";
-import { DeleteUserCase } from "@UseCases/Users/delete-user.case.js";
-import { FindUserCase } from "@UseCases/Users/get-user.case.js";
-import { ListUsersCase } from "@UseCases/Users/list-users.case.js";
-import { UpdateUserCase } from "@UseCases/Users/update-user.case.js";
+import { CreateUserCase } from "@UseCases/Users/create-user.case";
+import { DeleteUserCase } from "@UseCases/Users/delete-user.case";
+import { FindUserCase } from "@UseCases/Users/get-user.case";
+import { ListUsersCase } from "@UseCases/Users/list-users.case";
+import { UpdateUserCase } from "@UseCases/Users/update-user.case";
 
 @Controller("users")
 export class UserApiController {
@@ -21,32 +22,21 @@ export class UserApiController {
     private readonly listAll: ListUsersCase,
     private readonly updateUser: UpdateUserCase,
     private readonly deleteUser: DeleteUserCase
-  ) {
-    console.log("UserApiController constructed =>", {
-      createUser: !!createUser,
-      findUserId: !!findUserId,
-      listAll: !!listAll,
-      updateUser: !!updateUser,
-      deleteUser: !!deleteUser,
-    });
-  }
+  ) {}
 
   @Get()
   async findAll() {
     console.log("ListAll instance:", this.listAll);
 
-    return this.listAll.execute();
+    return await this.listAll.execute();
   }
-}
-
-/*
-        // Create a new user
-        @Post()
-        async create(@Body() body: { name: string; email: string }) {
-          await this.createUser.execute(body.name, body.email);
-          return { message: "User created" };
-        }
-        // Get user by Id
+  // Create a new user
+  @Post()
+  async create(@Body() body: { name: string; email: string }) {
+    await this.createUser.execute(body.name, body.email);
+    return { message: "User created" };
+  }
+  // Get user by Id
   @Get(":id")
   async findOne(@Param("id") id: string) {
     return this.findUserId.execute(id);
@@ -67,4 +57,4 @@ export class UserApiController {
     await this.deleteUser.execute(id);
     return { message: "User Deleted" };
   }
-  */
+}

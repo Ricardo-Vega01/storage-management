@@ -1,9 +1,9 @@
 import 'reflect-metadata';
 import { NestFactory } from "@nestjs/core";
-import { AppConfig } from "@Config/config.service.js";
-import { ConfigureApp } from "@Config/app.config.js";
-import { labels } from "@Utils/Labels.js";
-import { AppModule } from "@Modules/App/app.module.js";
+import { AppConfig } from "@Config/config.service";
+import { ConfigureApp } from "@Config/app.config";
+import { labels } from "@Utils/Labels";
+import { AppModule } from "@Modules/App/app.module";
 
 const main = async() => {
     try{

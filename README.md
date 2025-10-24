@@ -72,41 +72,87 @@ npx prisma studio
 
 ```bash
 ├──src
-│   ├── Adapters
-│   │   ├── In
-│   │   └── Out
-│   ├── App
-│   │   ├── Ports
-│   │   │   ├── In
-│   │   │   │   └── user-service.port.ts
-│   │   │   └── Out
-│   │   │       └── user-repo.port.ts
-│   │   └── UseCases
-│   │    └── Users
-│   │        └── create-user.case.ts
-│   ├── Domain
-│   │   ├── Entity
-│   │   │   └── Users
-│   │   │   │   └── user.entity.ts
-│   │   │   └── Values
-│   ├── Infrastructure
-│   │   ├── Config
-│   │   │   ├── app.config.ts
-│   │   │   ├── config.service.ts
-│   │   │   └── cors.config.ts
-│   │   ├── Database
-│   │   │   ├── database.module.ts
-│   │   │   └── prisma
-│   │   │       ├── migrations
-│   │   │       ├── prisma.service.ts
-│   │   │       └── schema.prisma
-│   │   ├── Middleware
-│   │   ├── Server
-│   │   │   ├── app.module.ts
-│   │   │   └── main.ts
-│   │   └── Utils
-│   │   │    └── Labels.ts
-│   └── Modules
+│   ├───Adapters
+│   │   ├───Cli
+│   │   ├───Events
+│   │   ├───Http
+│   │   │   │   web.controller.ts
+│   │   │   │
+│   │   │   └───Apis
+│   │   │           userApi.controller.ts
+│   │   │
+│   │   └───Repositories
+│   │       ├───Prisma
+│   │       │       userPrisma.repo.ts
+│   │       │
+│   │       └───User
+│   │               authUser.repo.ts
+│   │               userProfile.repo.ts
+│   │
+│   ├───App
+│   │   ├───Dtos
+│   │   │       user.dtos.ts
+│   │   │
+│   │   ├───Ports
+│   │   │   ├───In
+│   │   │   │   ├───Auth
+│   │   │   │   └───Users
+│   │   │   │           create-user.port.ts
+│   │   │   │           delete-user.port.ts
+│   │   │   │           get-user.port.ts
+│   │   │   │           list-users.port.ts
+│   │   │   │           update-user.port.ts
+│   │   │   │
+│   │   │   └───Out
+│   │   │           user-repo.port.ts
+│   │   │
+│   │   └───UseCases
+│   │       ├───Auth
+│   │       └───Users
+│   │               create-user.case.ts
+│   │               delete-user.case.ts
+│   │               get-user.case.ts
+│   │               list-users.case.ts
+│   │               update-user.case.ts
+│   │
+│   ├───Domain
+│   │   └───Entity
+│   │       └───Users
+│   │               user.entity.ts
+│   │
+│   ├───Infrastructure
+│   │   ├───Config
+│   │   │       app.config.ts
+│   │   │       config.service.ts
+│   │   │       cors.config.ts
+│   │   │
+│   │   ├───Database
+│   │   │   │   database.module.ts
+│   │   │   │
+│   │   │   └───prisma
+│   │   │       │   prisma.service.ts
+│   │   │       │   schema.prisma
+│   │   │       │
+│   │   │       └───migrations
+│   │   │           │   migration_lock.toml
+│   │   │           │
+│   │   │           └───20251021222736_startup
+│   │   │                   migration.sql
+│   │   │
+│   │   ├───Server
+│   │   │       main.ts
+│   │   │
+│   │   └───Utils
+│   │           Labels.ts
+│   │
+│   └───Modules
+│       ├───App
+│       │       app.module.ts
+│       │       webApp.module.ts
+│       │
+│       ├───Auth
+│       ├───Files
+│       └───Users
+│               user.module.ts 
 
-25 directories, 16 files
 ```
